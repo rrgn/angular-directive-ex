@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="angular.js"></script>
+    <script>
+      var app = angular.module('app', []);
+      app.controller('GoodJobController', function($scope) {
+        $scope.name = 'Anan';
+      });
+
+      app.directive('goodJob', function() {
+        return {
+          scope: {
+            subject: "="
+          },
+          template: '<h2>Good Job {{subject}}!</h2>'
+        };
+      });
+    </script>
+  </head>
+  <body ng-app="app" ng-controller="GoodJobController">
+      <div good-job subject="name"></div>
+      <good-job subject="'Hae'"></good-job>
+  </body>
+</html>

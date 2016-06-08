@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Jumbotron</title>
+    <link rel="stylesheet" href="bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <script src="angular.js"></script>
+    
+    <script>
+    var app = angular.module('app', []);
+    app.directive('jumbotron', function() {
+      return {
+        scope: {
+          // text: "="
+        },
+        transclude: true,
+        template:
+          '<h1 class="jumbotron" ng-transclude></h1>'
+
+      };
+    });
+    </script>
+  </head>
+  <body ng-app="app">
+    <jumbotron>I was made in AngularJS 👻™</jumbotron>
+  </body>
+</html>

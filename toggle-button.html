@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Color Button</title>
+    <style>
+      button {
+        background-color: teal;
+        width: 500px;
+        height: 250px;
+      }
+    </style>
+    <script src="angular.js"></script>
+    <script src="jquery.js"></script>
+    <script>
+      var app = angular.module('app', []);
+      app.directive('colorButton', function() {
+        return {
+          link: function(element, attr) {
+            $('button').on('click', function() {
+              // console.log('clicked');
+              $('button').css("background-color", "red");
+            });
+          },
+          scope: {
+          text: "="
+        },
+          template: "<button></button>"
+        };
+      });
+    </script>
+  </head>
+  <body ng-app="app">
+    <color-button></color-button>
+  </body>
+</html>
